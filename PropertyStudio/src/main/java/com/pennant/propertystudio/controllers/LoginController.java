@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.pennant.propertystudio.service.LoginService;
 
+import org.springframework.ui.Model;
+
 @Controller
 
 public class LoginController {
@@ -26,7 +28,7 @@ public class LoginController {
 		boolean flag=ls.verify(email, password);
 		if(flag==true) {
 			System.out.println("redirected to controller");
-			return "profile";
+			return "redirect:/profile";
 		}else {
 			return "error";
 		}

@@ -14,6 +14,7 @@ import com.pennant.propertystudio.models.CustomerUser;
 import com.pennant.propertystudio.repositories.CustomerUserRepository;
 import com.pennant.propertystudio.utilities.IHashGenerator;
 
+import org.springframework.ui.Model;
 import jakarta.servlet.http.HttpSession;
 
 @Service
@@ -42,6 +43,7 @@ public class LoginService {
 			if(hashpwd.equals(customerUser.getPassword())) {
 				System.out.println("password is verified");
 				 httpSession.setAttribute("customerId", customerUser.getId());
+				 
 				return true;
 			}else {
 				return false;
